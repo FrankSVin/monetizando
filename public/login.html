@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="imagem/jpg" href="img/iconMonet.jpg"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="login/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="login/css/main.css">
+<!--===============================================================================================-->
+
+
+
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-90 p-b-30">
+				<form class="login100-form validate-form"  id="formLogin" 
+				method="post" onsubmit="autenticar(); return false;">
+					<!-- Início texto "Entre em sua conta" -->
+					<div class="text-center p-t-55 p-b-30"">
+						<span class="txt1">
+							Entre em sua conta
+						</span>
+					</div>
+					<!-- Fim "Entre em sua conta" -->
+
+					<!-- início Campo login -->
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Por favor, identifique seu e-mail">
+						<input class="input100" type="text" name="login" id="login" placeholder="Usuário">
+						<span class="focus-input100">
+						</span>
+					</div>
+					<!-- Fim Campo login -->
+
+					<!-- Início campo senha -->
+					<div class="wrap-input100 validate-input m-b-20" data-validate = "Por favor, digite sua senha">
+						<!-- função de deixar senha visível via ferramentas do Bootstrap -->
+						<span class="btn-show-pass">
+							<!-- Ícone de "olhos" para deixar visível (Metáforas do mundo real) -->
+							<i class="fa fa fa-eye"></i>
+						</span>
+						<input class="input100" type="password" name="password" id="password" placeholder="Senha">
+						<span class="focus-input100"></span>
+					</div>
+					<!-- Fim do campo senha -->
+
+					<!-- Início do botão "Entrar" -->
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Entrar
+						</button>
+					</div>
+					<!-- Fim do botão de entrar -->
+					
+				</form>
+				<div style="align-self: center;">
+					<br>
+					<p> </p>
+					<br>
+					<a href="index.html" style="text-align: center">Voltar para página inicial</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+<!--===============================================================================================-->
+	<script src="login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="login/vendor/bootstrap/js/popper.js"></script>
+	<script src="login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="login/js/main.js"></script>
+
+</body>
+</html>
+
+<script>
+	function autenticar() {
+		let dados = $('#formLogin').serialize();
+		$.ajax({
+				url : "/login",
+				type: 'POST',
+				data : dados
+		})
+		.done(function(resposta){ 
+			window.location.href='/dashboard.html';
+		})
+		.fail(function(jqXHR, textStatus){ 
+			alert(jqXHR.responseJSON.mensagem);
+		});
+		return false;
+	}
+
+
+</script>
+
+<!-- <script src="/routes/login.js"></script> -->

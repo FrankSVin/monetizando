@@ -1,0 +1,25 @@
+{
+    "channels": [
+        {
+            "position": 0,
+            "id": "581844864006619145",
+            "name": "Geral"
+        }
+    ],
+    "instant_invite": null,
+    "id": "581844863461490690",
+    "members": [
+        {
+            "username": "Donatello",
+            "status": "dnd",
+            "game": {
+                "name": "Spotify"
+            },
+            "avatar_url": "https://cdn.discordapp.com/avatars/165815170440888320/8e1fc6a622178098898f25a12db4105b.jpg",
+            "avatar": "8e1fc6a622178098898f25a12db4105b",
+            "discriminator": "7820",
+            "id": "165815170440888320"
+        }
+    ],
+    "name": "Mone(TI)zando"
+}

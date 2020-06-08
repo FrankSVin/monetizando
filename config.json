@@ -1,0 +1,23 @@
+{
+    "database": {
+        "server": "monetizando.database.windows.net",
+        "user": "brino",
+        "password": "Monetizando@5",
+        "database": "monetizando",
+        "options": {
+            "encrypt": true
+        }
+    },
+    "database2": {
+        "server": "monetizando.database.windows.net",
+        "user": "brino",
+        "password": "Monetizando@5",
+        "database": "monetizando",
+        "options": {
+            "encrypt": true
+        }
+    },
+    "security": {
+        "key": "CHAVE_SEGURANCA"
+    }
+}
